@@ -94,4 +94,17 @@ kita tetap memerlukan DashMap. DashMap dirancang khusus untuk mendukung akses be
 
 #### Reflection Publisher-2
 
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+
+Dalam pola MVC, Model biasanya mengatur penyimpanan data sekaligus logika bisnis. Tapi, kalau kita gabungkan semuanya di Model, kode bisa jadi berantakan dan sulit dikelola. Dengan memisahkan Service dan Repository, kode kita bisa lebih terorganisir. Repository fokus pada interaksi dengan database, seperti mengambil atau menyimpan data, sementara Service menangani logika bisnis, seperti aturan atau proses yang harus dijalankan. Pemisahan ini bikin kode lebih modular, gampang diuji, dan lebih fleksibel jika nantinya tedapat perubahan.
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+
+Kalau kita cuma pakai Model tanpa memisahkan Service dan Repository, kode bakal jadi lebih rumit dan susah dikelola. Semua logika bisnis, penyimpanan data, dan interaksi antar model diletakkan di satu tempat. Interaksi antar model bakal bikin kode saling bergantung, jadi kalau ada perubahan di satu model, model lain bisa ikut kena dampaknya. Misal, kalau Program harus mengirim notifikasi ke Subscriber, semua logika itu harus ditulis di Model, yang bikin kode jadi panjang dan susah dibaca. Selain itu, debugging juga bakal lebih ribet karena semuanya bercampur di satu tempat. Dengan memisahkan Service dan Repository, kita bisa bikin kode lebih modular, gampang diuji, dan lebih fleksibel buat perubahan di masa depan.
+
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+Postman menurut saya sangat membantu buat ngetes project kita, terutama kalau lagi bikin atau nge-debug API. Dengan Postman, kita bisa kirim request HTTP ke server kita, dengan method seperti GET, POST, PUT, atau DELETE, dengan langsung melihat responsnya. Jadi, kita bisa tahu apakah API kita udah jalan sesuai ekspektasi atau belum. Salah satu fitur yang paling berguna menurutku adalah kemampuan buat simpan request dalam bentuk collection. Ini bikin kita nggak perlu ngetik ulang request yang sama berulang kali. Untuk proyek kelompok atau masa depan, fitur automated testing-nya juga akan sangat berguna, karena kita dapat membuat script untuk mengecek apakah semua endpoint masih jalan setelah ada perubahan kode.
+
+
 #### Reflection Publisher-3
